@@ -25,6 +25,10 @@ Route::get('/onderhoud', function (){
 
 Route::group(['middleware' => ['web']], function() {
 
+// Profile Routes...
+    Route::get('/me', 'MeController@index')->name('index');
+    Route::post('/me', 'MeController@updateAvatar')->name('updateAvatar');
+
 // Login Routes...
     Route::post('/', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
     Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
