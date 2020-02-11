@@ -3,7 +3,9 @@
     width: 35px;
 }
 body{
-    margin-top: 200px;
-    max-width: 80%;
-    margin: 0 auto !important;
+    /*-webkit-transform: scale(0.75);*/
+    /*-moz-transform: scale(0.75);*/
+    /*transform: scale(0.75);*/
+    /*transform-origin: 0 0;*/
+    /*margin: 0 auto !important;*/
 }

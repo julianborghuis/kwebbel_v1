@@ -27,6 +27,8 @@
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
         <div class="d-flex flex-grow-1">
             <a class="navbar-brand" href="/">
+                <img src="https://dcassetcdn.com/design_img/1435968/110581/110581_7296153_1435968_5c1d423c_image.jpg"
+                     width="30" height="30" class="d-inline-block align-top" alt="">
                 Kwebbelweb
             </a>
             <form class="mr-2 my-auto w-100 d-inline-block order-1" action="/search"  method="post">
@@ -101,6 +103,7 @@
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Login') }}
                                         </button>
+
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
@@ -112,7 +115,7 @@
                         </div>
                     @else
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/me">{{ Auth::user()->username}}</a>
+                            <a class="dropdown-item" href="#">{{ Auth::user()->name }}</a>
                             <a class="dropdown-item" href="/logout">Log uit</a>
                         </div>
                     @endif
