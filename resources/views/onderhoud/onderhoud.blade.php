@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 @extends('layouts.main')
 hi
+=======
+@extends('layouts.app')
+
+>>>>>>> 2144cef0a95d6786cca594e00fb3d58b47dfb36e
 @section('content')
 <div class="container">
     <div class="row align-items-center">
