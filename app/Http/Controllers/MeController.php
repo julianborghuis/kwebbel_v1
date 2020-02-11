@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \DB;
+use Validator,Redirect,Response,File, Auth;
 
-class IndexController extends Controller
+class MeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -13,7 +15,7 @@ class IndexController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+       $this->middleware('auth');
     }
 
     /**
@@ -23,8 +25,11 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('onderhoud.onderhoud');
+        return view('profile.me');
+        $user = Auth::user();
 
     }
-
+    public function updateAvatar(Request $request){
+        var_dump($_POST);
+    }
 }
