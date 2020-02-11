@@ -23,7 +23,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('onderhoud.onderhoud');
+        return view('index');
 
     }
 

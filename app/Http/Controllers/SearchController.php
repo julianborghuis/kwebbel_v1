@@ -29,14 +29,12 @@ class SearchController extends Controller
     }
     public function search(Request $request){
         $result = DB::table('users')
-            ->where('username', 'like', '%'.$request->search.'%')
+            ->where('name', 'like', '%'.$request->search.'%')
             ->get();
 
         if(count($result) < 1){
-            return view('/search', ['error' => 'Geen resultaten voor: '. $request->search]);
+            return view('/search', ['error' => 'Geen resultaten.']);
         }
-        return view('/search', ['users' => $result,
-        'search' => $request->search
-        ]);
+        return view('/search', ['users' => $result]);
     }
 }
