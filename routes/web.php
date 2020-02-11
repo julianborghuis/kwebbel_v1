@@ -13,7 +13,9 @@ use App\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'IndexController@index')->name('index');
+Route::get('/',  function (){
+view('onderhoud.onderhoud');
+});
 
 Route::get('/search', 'SearchController@index')->name('index');
 Route::post('/search', 'SearchController@search')->name('search');

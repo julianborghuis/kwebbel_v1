@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+hi
 @section('content')
 <div class="container">
     <div class="row align-items-center">
