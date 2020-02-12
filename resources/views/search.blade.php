@@ -6,10 +6,10 @@
         <p>{{$error}}</p>
         @endif
         @if(isset($users))
-            <h2>Resultaten: </h2>
+            <h2>Resultaten voor {{$search}}: </h2>
                 @foreach($users as $user)
-
-                        <p>{{$user->name}}</p>
+                        <a href="/profile/{{$user->username}}">{{$user->firstname}} {{$user->lastname}}</a>
+                        <p>{{$user->username}}</p>
                 @endforeach
         @endif
     </div>
