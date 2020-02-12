@@ -19,10 +19,6 @@ Route::get('/search', 'SearchController@index')->name('index');
 Route::post('/search', 'SearchController@search')->name('search');
 
 
-Route::get('/onderhoud', function (){
- view('onderhoud.onderhoud');
-});
-
 Route::group(['middleware' => ['web']], function() {
 
 // Profile Routes...
