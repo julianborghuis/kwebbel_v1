@@ -2,8 +2,20 @@
     height: 35px;
     width: 35px;
 }
+#profile_avatar_search{
+    height: 50px;
+    width: 50px;
+}
+.search_results{
+    margin-top: 20px;
+}
+.search_results .media{
+    margin-top: 25px;
+}
 body{
-    margin-top: 200px;
     max-width: 80%;
-    margin: 0 auto !important;
+    margin: 50px auto !important;
+}
+.navbar-brand{
+    color: white !important;
 }

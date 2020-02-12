@@ -44,7 +44,7 @@ class MeController extends Controller
 
             unlink($_FILES['avatar']['name']);
 
-            return view('/me', $message = 'Uw profiel foto is geupdate');
+            return view('profile.me', ['message' => 'success']);
 
         }
     }

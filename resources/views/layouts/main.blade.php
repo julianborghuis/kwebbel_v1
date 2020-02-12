@@ -19,12 +19,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #6c6fc5;">
         <div class="d-flex flex-grow-1">
             <a class="navbar-brand" href="/">
                 Kwebbelweb
@@ -46,9 +46,8 @@
         <div class="navbar-collapse collapse flex-shrink-1 flex-grow-0 order-last" id="navbar7">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        x
+                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    x
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Action</a>
@@ -57,11 +56,17 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        <img id="profile_avatar" src="{{asset('img/test_avatar.png')}}"
+                       @if(Auth::guest())
+                       <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                        <img id="profile_avatar" src="https://sanjaymotels.com/wp-content/uploads/2019/01/testimony.png"
                              class="rounded-circle responsive" alt="Profiel">
-                    </a>
+                         </a>
+                        @else
+                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                        <img id="profile_avatar" src="data:image/png;base64, {{Auth::user()->avatar}}"
+                             class="rounded-circle responsive" alt="Profiel">
+                         </a>
+                        @endif
                     @if (Auth::guest())
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <form class="px-4 py-3" method="POST" {{ route('login') }}>
