@@ -30,6 +30,22 @@ class MeController extends Controller
 
     }
     public function updateAvatar(Request $request){
-        var_dump($_POST);
+        $user = Auth::user();
+
+        if($_FILES["avatar"]["tmp_name"]){
+            $target_path = basename( $_FILES['avatar']['name']);
+            move_uploaded_file($_FILES['avatar']['tmp_name'], $target_path);
+
+            $im = file_get_contents($_FILES['avatar']['name']);
+            $imdata = base64_encode($im);
+            
+            $user->avatar = $imdata;
+            $user->save();
+
+            unlink($_FILES['avatar']['name']);
+
+            return view('/me', $message = 'Uw profiel foto is geupdate');
+
+        }
     }
 }

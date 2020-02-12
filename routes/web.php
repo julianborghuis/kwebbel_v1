@@ -19,6 +19,7 @@ Route::get('/search', 'SearchController@index')->name('index');
 Route::post('/search', 'SearchController@search')->name('search');
 
 
+
 Route::group(['middleware' => ['web']], function() {
 
 // Profile Routes...

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form method="POST" action="">
+        <form method="POST" enctype="multipart/form-data">
         @csrf
             <div class="form-group">
                 <label for="avatar">Upload profiel foto</label>
