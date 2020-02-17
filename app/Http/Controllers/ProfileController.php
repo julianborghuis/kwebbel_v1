@@ -9,11 +9,11 @@ class ProfileController extends Controller
 {
     public function index($username)
     {
-        $profileModal = new ProfileModal(); 
-        $result = DB::table('users')
-        ->where('username', $username)
-        ->get();
+        $profileModal = new \App\Profile();
+        
+        $userDetails = $profileModal->getUserDetails($username);
 
-        return view('profile.profile', ['username' => $username, 'userData' => $result]);
+
+        return view('profile.profile', ['username' => $username, 'userData' => $userDetails]);
     }
 }
