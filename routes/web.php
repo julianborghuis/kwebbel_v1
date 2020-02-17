@@ -22,9 +22,14 @@ Route::post('/search', 'SearchController@search')->name('search');
 
 Route::group(['middleware' => ['web']], function() {
 
-// Profile Routes...
+// Own profile Routes...
     Route::get('/me', 'MeController@index')->name('index');
     Route::post('/me', 'MeController@updateAvatar')->name('updateAvatar');
+
+
+// Profile Routes
+
+    Route::get('/profile/{username}', ['uses' => 'ProfileController@index' ])->name('index');
 
 // Login Routes...
     Route::post('/', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);

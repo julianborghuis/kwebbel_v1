@@ -44,8 +44,10 @@ class MeController extends Controller
 
             unlink($_FILES['avatar']['name']);
 
-            return view('profile.me', ['message' => 'success']);
+            return view('profile.me', ['message' => 'Uw profiel foto is bijgewerkt!']);
 
+        }else{
+            return view('profile.me', ['error' => 'Er ging iets fout. ']);
         }
     }
 }

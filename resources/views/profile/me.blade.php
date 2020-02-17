@@ -1,6 +1,18 @@
 @extends('layouts.main')
 
 @section('content')
+@if(isset($message))
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            {{$message}}
+            </div>
+        </div>
+    </div>
+@endif
     <div class="container">
         <form method="POST" enctype="multipart/form-data">
         @csrf
