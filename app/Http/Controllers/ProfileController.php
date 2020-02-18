@@ -12,8 +12,20 @@ class ProfileController extends Controller
         $profileModal = new \App\Profile();
         
         $userDetails = $profileModal->getUserDetails($username);
+        $userFriends = $profileModal->getUserFriends($userDetails->id);
+
+        return view('profile.profile', ['username' => $username, 'userData' => $userDetails, 'friends' => $userFriends]);
+    }
+
+    public function sendFriendRequest(Request $request){
+
+        $profileModal = new \App\Profile();
+        $user_id = Auth::user()->id;
+
+        $profileModal->sendFriendRequest($user_id, $request->incommingFriendRequest);
 
 
-        return view('profile.profile', ['username' => $username, 'userData' => $userDetails]);
+        return redirect(url()->previous())->with('message' , 'Vriendschap verzoek succesvol gestuurd!') ;
+
     }
 }

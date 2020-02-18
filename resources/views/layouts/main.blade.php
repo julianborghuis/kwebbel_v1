@@ -22,6 +22,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 </head>
 <body>
 <div id="app">
@@ -48,12 +49,21 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    x
+                    <i class="far fa-bell"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdownNotifications" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdownNotificationsClose">
+                            <a href="#">x</a>
+                        </div>
+                        <div class="dropdownNotification">
+                            <h5>Notificatie 1</h5>
+                            <p><strong>Lex</strong> heeft u toegevoegd als vriend</p>
+                            <hr>
+                        </div>
+                        <div class="dropdownNotification">
+                            <h5>Notificatie 2</h5>
+                            <p><strong>Lexxx</strong> heeft iets gepost!</p>
+                        </div>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

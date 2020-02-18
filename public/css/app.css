@@ -3,8 +3,8 @@
     width: 35px;
 }
 #profile_avatar_search{
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
 }
 .search_results{
     margin-top: 20px;
@@ -46,16 +46,26 @@ body{
     color: black;
 }
 .profileMain{
-    border-top: 5px solid #6c6fc5;
     margin-top: 25px;
     padding: 15px;
 }
 .profileMain .profileAvatar{
-    margin: 0 auto;
+    margin: 10px 0px auto;
     width: 150px;
     height: 180px;
 }
+.profileMainInfoHeader{
+    padding: 2px;
+    background-color: #6c6fc5;
+    border-radius: 5px 5px 0px 0px;
+}
+.profileMainInfoHeader h5{
+    text-align: center;
+   
+}
 .profileMainInfo{
+    text-align: center;
+    padding: 0;
     border-left: 4px solid #6c6fc5;
     border-right: 4px solid #6c6fc5;
     border-radius: 10px 10px 0px 0px;
@@ -73,4 +83,36 @@ body{
 .profileMainInfoRight{
     border-right: 4px solid #6c6fc5;
     border-radius: 10px 10px 0px 0px;
+}
+.dropdownNotifications{
+    padding: 25px;
+    width: 300px;
+
+}
+.dropdownNotificationsClose{
+    text-align: right;
+}
+.dropdownNotificationsClose a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+.dropdownNotificationsClose a:hover{
+    color: grey;
+}
+.profileFriendLink{
+    text-align: center;
+    max-width: 0;
+}
+.profileFriend img{
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+    display: block;
+}
+.profileHeaderAddFriend{
+    color: lightgreen !important; 
+}
+.profileHeaderAddFriend:hover{
+    color: lightseagreen !important; 
 }

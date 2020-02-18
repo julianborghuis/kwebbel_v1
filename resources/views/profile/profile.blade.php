@@ -1,7 +1,18 @@
 @extends('layouts.main')
-
+@if(isset($message))
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            {{$message}}
+            </div>
+        </div>
+    </div>
+@endif
 @section('content')
-{{-- {{dd($userData)}} --}}
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 profileHeader">
@@ -16,10 +27,16 @@
                     <li class="list-inline-item"> | </li>
                     <li class="list-inline-item"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Meer</a>
                     <div class="dropdown-menu profileHeaderQuickLinksDropDown" aria-labelledby="profileHeaderMore">
-                            <a class="dropdown-item profileHeaderQuickLinksDropDownItem" href="#">Action</a>
-                            <a class="dropdown-item profileHeaderQuickLinksDropDownItem" href="#">Another action</a>
-                            <a class="dropdown-item profileHeaderQuickLinksDropDownItem" href="#">Something else here</a>
+                            <a class="dropdown-item profileHeaderQuickLinksDropDownItem" href="#">Profiel URL</a>
+                            <a class="dropdown-item profileHeaderQuickLinksDropDownItem" href="#">Rapporteer</a>
+                            <a class="dropdown-item profileHeaderQuickLinksDropDownItem" href="#">Blokkeer</a>
                         </div>
+                    </li>
+                    <li class="list-inline-item">
+                    <form method="POST" action="/profile/action/addfriend">
+                    @csrf
+                        <button class="profileHeaderAddFriend" name="incommingFriendRequest" value="{{$userData->id}}">Vrienden verzoek <i class="fas fa-user-plus"></i></button>
+                    </form>
                     </li>
                 </ul>
         </div>
@@ -28,14 +45,32 @@
     <div class="container-fluid profileMain">
         <div class="row">
             <div class="col-md-4 profileMainInfo">
+                <div class="profileMainInfoHeader">
+                    <h5>Profiel</h5>
+                </div>
                 <img class="responsive-img profileAvatar rounded mx-auto d-block" src="data:image/png;base64, {{$userData->avatar}} " alt="">
                 <h4 class="profileMainInfoName">{{$userData->firstname}} {{$userData->lastname}}</h4>
                 <hr id="pictureInfoSplitter">
                 <p>Hier komt een klein tekstje geschreven door de gebruiker :).</p>
             </div>
-            <div class="col-md-8 profileMainInfoRight">
+            <div class="col-md-5 profileMainInfoRight">
                 <h2>Hihi</h2>
                 <p>Nog meer shit</p>
+            </div>
+            <div class="col-md-3">
+                <div class="friendsHeader">
+                    <h5><i class="fas fa-user-friends"></i>Vrienden: </h5>
+                </div>
+                <div class="friendsMain">
+                    @foreach($friends as $friend)
+                    <div class="profileFriend col-md-4">
+                    <a class="profileFriendLink text-center text-sm-right" href="/profile/{{$friend->username}}">
+                       <img class="responsive" src="data:image/png;base64, {{$friend->avatar}}" >
+                       {{$friend->firstname}} {{$friend->lastname}}
+                       </a>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

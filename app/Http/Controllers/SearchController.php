@@ -27,6 +27,7 @@ class SearchController extends Controller
         return view('search');
 
     }
+    
     public function search(Request $request){
         $result = DB::table('users')
             ->where('username', 'like', '%'.$request->search.'%')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class IndexController extends Controller
 {
@@ -13,7 +14,7 @@ class IndexController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+   //   $this->middleware('auth');
     }
 
     /**
@@ -23,8 +24,11 @@ class IndexController extends Controller
      */
     public function index()
     {
+        if(Auth::guest()){
         return view('index');
-
+        }else{
+            return view('profile.me');
+        }
     }
 
 }
