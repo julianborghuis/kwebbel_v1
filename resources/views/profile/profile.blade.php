@@ -1,19 +1,23 @@
 @extends('layouts.main')
-@if(isset($message))
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            {{$message}}
-            </div>
-        </div>
+
+@section('content')
+<div class="container-fluid">
+@if((session('success')))
+    <div class="col-md-12 alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            {{session('success')}}
     </div>
 @endif
-@section('content')
-
-<div class="container-fluid">
+@if((session('error')))
+    <div class="col-md-12 alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            {{session('error')}}
+    </div>
+@endif
     <div class="row">
         <div class="col-md-12 profileHeader">
                 <h3 class="profileHeaderName">{{$userData->firstname}} {{$userData->lastname}}</h3>
@@ -35,7 +39,8 @@
                     <li class="list-inline-item">
                     <form method="POST" action="/profile/action/addfriend">
                     @csrf
-                        <button class="profileHeaderAddFriend" name="incommingFriendRequest" value="{{$userData->id}}">Vrienden verzoek <i class="fas fa-user-plus"></i></button>
+                        <button class="profileHeaderAddFriend" name="incommingFriendRequest" value="{{$userData->id}}"><i class="fas fa-user-plus"></i></button>
+                        <input class="invisible" hidden name="username" value="{{$userData->username}}"></input>
                     </form>
                     </li>
                 </ul>

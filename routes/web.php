@@ -29,7 +29,7 @@ Route::group(['middleware' => ['web']], function() {
 
 // Profile Routes
 
-    Route::get('/profile/{username}', ['uses' => 'ProfileController@index' ])->name('index');
+    Route::get('/profile/{username}', ['uses' => 'ProfileController@index' ])->name('profile');
     Route::post('/profile/action/addfriend', 'ProfileController@sendFriendRequest')->name('sendFriendRequest');
 
 // Login Routes...

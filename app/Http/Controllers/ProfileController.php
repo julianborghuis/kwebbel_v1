@@ -23,9 +23,8 @@ class ProfileController extends Controller
         $user_id = Auth::user()->id;
 
         $profileModal->sendFriendRequest($user_id, $request->incommingFriendRequest);
-
-
-        return redirect(url()->previous())->with('message' , 'Vriendschap verzoek succesvol gestuurd!') ;
+                
+        return redirect()->route('profile', [$request->username])->with('success', 'U heeft een vriendschap verzoek verstuurd!');
 
     }
 }
