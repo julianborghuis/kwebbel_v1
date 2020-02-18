@@ -13,9 +13,64 @@
     margin-top: 25px;
 }
 body{
-    max-width: 80%;
-    margin: 50px auto !important;
+   max-width: 85%; 
+   margin: 50px auto !important;
 }
 .navbar-brand{
     color: white !important;
+}
+.profileHeader{
+    border-top: 2px solid #6c6fc5;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #6c6fc5;
+    margin-top: 25px;
+    padding: 15px;
+}
+.profileHeaderQuickLinks{
+    display: inline;
+    padding-left: 0;
+}
+.profileHeaderQuickLinks li{
+    text-decoration: none;
+    color: white;
+}
+.profileHeaderQuickLinks li a{
+    text-decoration: none;
+    color: black;  
+}
+.profileHeaderQuickLinks li a:hover{
+    color: white;
+}
+.profileHeaderQuickLinks .profileHeaderQuickLinksDropDown .profileHeaderQuickLinksDropDownItem:hover {
+    background-color: lightgray;
+    color: black;
+}
+.profileMain{
+    border-top: 5px solid #6c6fc5;
+    margin-top: 25px;
+    padding: 15px;
+}
+.profileMain .profileAvatar{
+    margin: 0 auto;
+    width: 150px;
+    height: 180px;
+}
+.profileMainInfo{
+    border-left: 4px solid #6c6fc5;
+    border-right: 4px solid #6c6fc5;
+    border-radius: 10px 10px 0px 0px;
+    
+}
+.profileMainInfo #pictureInfoSplitter{
+    color: grey;
+    width: 75%;
+    text-align: center;
+}
+.profileMainInfo .profileMainInfoName{
+    margin-top: 5px;
+    text-align: center;
+}
+.profileMainInfoRight{
+    border-right: 4px solid #6c6fc5;
+    border-radius: 10px 10px 0px 0px;
 }

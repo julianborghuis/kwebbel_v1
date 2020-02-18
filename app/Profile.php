@@ -10,8 +10,9 @@ class Profile extends Model
     public function getUserDetails($username){
         $result = DB::table('users')
         ->where('username', $username)
-        ->get();
+        ->first();
 
+        $result->password = '*****';
         return $result;
     }
 }
