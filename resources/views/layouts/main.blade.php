@@ -26,7 +26,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #6c6fc5;">
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #bd6060;">
         <div class="d-flex flex-grow-1">
             <a class="navbar-brand" href="/">
                 Kwebbelweb

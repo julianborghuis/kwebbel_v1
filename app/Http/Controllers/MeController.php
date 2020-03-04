@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \DB;
 use Validator,Redirect,Response,File, Auth;
+use \App\Me;
 
 class MeController extends Controller
 {
@@ -25,7 +26,11 @@ class MeController extends Controller
      */
     public function index()
     {
-        return view('profile.me');
+        $meModal = new \App\Me();
+
+        $friend_requests = $meModal->checkFriendRequests();
+        
+        return view('profile.me', ['friend_requests' => $friend_requests]);
         $user = Auth::user();
 
     }
@@ -49,5 +54,37 @@ class MeController extends Controller
         }else{
             return view('profile.me', ['error' => 'Er ging iets fout. ']);
         }
+    }
+
+    public function checkFriendRequests(){
+        $meModal = new \App\Me();
+
+        $friend_requests = $meModal->checkFriendRequests();
+
+        if(!$friend_requests){
+            return 'NO_FRIEND_REQUESTS';
+        }
+
+        return $friend_requests;
+    }
+    public function acceptFriend(Request $request){
+
+        $id = $request->friend_id;
+
+        $meModal = new \App\Me();
+
+        $accept = $meModal->acceptFriend($id);
+
+        return view('profile.me', ['success' => 'U heeft de vriendschap verzoek geaccepteerd.']);
+
+    }
+
+    public function denyFriend(Request $request){
+        $meModal = new \App\Me();
+
+        $deny = $meModal->denyFriend($id);
+
+        return view('profile.me', ['success' => 'U heeft de vriendschap verzoek afgewezen.']);
+        
     }
 }

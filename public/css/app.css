@@ -20,9 +20,9 @@ body{
     color: white !important;
 }
 .profileHeader{
-    border-top: 2px solid #6c6fc5;
+    border-top: 2px solid #bd6060;
     border-radius: 10px 10px 0px 0px;
-    background-color: #6c6fc5;
+    background-color: #bd6060;
     margin-top: 25px;
     padding: 15px;
 }
@@ -56,7 +56,7 @@ body{
 }
 .profileMainInfoHeader{
     padding: 2px;
-    background-color: #6c6fc5;
+    background-color: #bd6060;
     border-radius: 5px 5px 0px 0px;
 }
 .profileMainInfoHeader h5{
@@ -66,8 +66,8 @@ body{
 .profileMainInfo{
     text-align: center;
     padding: 0;
-    border-left: 4px solid #6c6fc5;
-    border-right: 4px solid #6c6fc5;
+    border-left: 4px solid #bd6060;
+    border-right: 4px solid #bd6060;
     border-radius: 10px 10px 0px 0px;
     
 }
@@ -81,7 +81,7 @@ body{
     text-align: center;
 }
 .profileMainInfoRight{
-    border-right: 4px solid #6c6fc5;
+    border-right: 4px solid #bd6060;
     border-radius: 10px 10px 0px 0px;
 }
 .dropdownNotifications{
@@ -115,4 +115,29 @@ body{
 }
 .profileHeaderAddFriend:hover{
     color: lightseagreen !important; 
+}
+.friend_request_avatar{
+    height: 35px;
+    width: 35px;
+}
+.friendRequests{
+    padding: 10px;
+    border: 1px solid #bd6060;
+}
+.friendRequestsHeader{
+    margin: 0;
+    padding: 0px 5px;
+    background-color: #bd6060;
+}
+.friendRequestUsername{
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.friendRequestAccept{
+    background-color: #fff;
+    color: green;
+}
+.friendRequestDeny{
+    background-color: #fff;
+    color: red;
 }

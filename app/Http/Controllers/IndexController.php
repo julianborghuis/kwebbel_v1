@@ -27,7 +27,7 @@ class IndexController extends Controller
         if(Auth::guest()){
         return view('index');
         }else{
-            return view('profile.me');
+            return redirect()->route('index');
         }
     }
 

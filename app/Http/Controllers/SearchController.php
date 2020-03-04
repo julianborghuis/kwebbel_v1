@@ -29,6 +29,11 @@ class SearchController extends Controller
     }
     
     public function search(Request $request){
+
+        $validatedData = $request->validate([
+            'search' => 'min:3|max:50' 
+        ]);
+        
         $result = DB::table('users')
             ->where('username', 'like', '%'.$request->search.'%')
             ->get();

@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
 <div class="container-fluid">
 @if((session('success')))
@@ -36,6 +35,7 @@
                             <a class="dropdown-item profileHeaderQuickLinksDropDownItem" href="#">Blokkeer</a>
                         </div>
                     </li>
+                    @if((!$friend))
                     <li class="list-inline-item">
                     <form method="POST" action="/profile/action/addfriend">
                     @csrf
@@ -43,6 +43,15 @@
                         <input class="invisible" hidden name="username" value="{{$userData->username}}"></input>
                     </form>
                     </li>
+                    @else
+                    <li class="list-inline-item">
+                    <form method="POST" action="/profile/action/removefriend">
+                    @csrf
+                        <button class="profileHeaderRemoveFriend" name="incommingFriendRemoval" value="{{$userData->id}}"><i class="fas fa-user-minus"></i></button>
+                        <input class="invisible" hidden name="username" value="{{$userData->username}}"></input>
+                    </form>
+                    </li>
+                    @endif
                 </ul>
         </div>
     </div>

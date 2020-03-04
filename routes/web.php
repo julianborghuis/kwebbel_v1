@@ -26,11 +26,16 @@ Route::group(['middleware' => ['web']], function() {
     Route::get('/me', 'MeController@index')->name('index');
     Route::post('/me', 'MeController@updateAvatar')->name('updateAvatar');
 
-
+    Route::post('/me/action/denyFriend', 'MeController@denyFriend')->name('denyFriend');
+    Route::post('/me/action/addFriend', 'MeController@acceptFriend')->name('acceptFriend');
+    Route::resource('/me', 'MeController');
+    
 // Profile Routes
 
     Route::get('/profile/{username}', ['uses' => 'ProfileController@index' ])->name('profile');
     Route::post('/profile/action/addfriend', 'ProfileController@sendFriendRequest')->name('sendFriendRequest');
+    Route::post('/profile/action/removefriend', 'ProfileController@removeFriend')->name('removeFriend');
+
 
 // Login Routes...
     Route::post('/', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
